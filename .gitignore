@@ -1,0 +1,37 @@
+# --- Byte-compiled / Optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+
+# --- Caches & Logs ---
+.pytest_cache/
+.mypy_cache/
+.cache/
+*.log
+*.log.*
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+.env
+
+# --- Environment Variables (SEGURANÇA CRÍTICA) ---
+.env
+.env.local
+.env.*.local
+
+# --- Distribution / Build ---
+build/
+dist/
+*.egg-info/
+
+# --- IDEs & Editors ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Docker ---
+# Se usar volumes locais para persistência
+redis_data/
+postgres_data/
