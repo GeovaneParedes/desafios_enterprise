@@ -20,7 +20,8 @@ def call_api(request_id):
 
 if __name__ == "__main__":
     print(
-        f"--- Iniciando Teste de Estresse ({TOTAL_REQUESTS} reqs simultâneas) ---"
+        f"--- Iniciando Teste de Estresse "
+        f"({TOTAL_REQUESTS} reqs simultâneas) ---"
     )
     print(f"Alvo: {URL}\n")
 
