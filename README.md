@@ -19,7 +19,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 
 | ID | Padrão / Desafio | Descrição do Problema & Solução | Status |
 |:--:|:---|:---|:--:|
-| 01 | **Distributed Rate Limiting** | Controle de tráfego distribuído (Sliding Window) utilizando Redis para prevenção de DDoS e abuso de recursos. | *Em Progresso* |
+| 01 | [**Distributed Rate Limiting**](./01-distributed-rate-limiting) | Controle de tráfego distribuído (Sliding Window) utilizando Redis para prevenção de DDoS e abuso de recursos. | ✅ Concluído |
 | 02 | **Idempotency** | Implementação de chaves de idempotência para garantir que requisições de pagamento duplicadas não gerem cobrança dupla. | A Fazer |
 | 03 | **Distributed Locking** | Mutex distribuído para prevenir Race Conditions em acesso concorrente a recursos críticos (ex: reserva de assentos). | A Fazer |
 | 04 | **Circuit Breaker** | Proteção contra falhas em cascata e degradação graciosa quando serviços dependentes ficam indisponíveis. | A Fazer |
