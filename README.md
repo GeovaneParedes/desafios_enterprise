@@ -1,41 +1,60 @@
-Cronograma: 20 Dias de Desafios Enterprise
+# Enterprise Software Engineering Challenges
 
-    API Rate Limiting Distribuído: Controle de tráfego para proteger recursos (evitar DDoS e abuso).
+Este repositório documenta a implementação de referência para 20 cenários complexos de engenharia de software focados em aplicações corporativas de alta escala. 
 
-    Idempotência em Pagamentos: Garantir que uma requisição de pagamento duplicada não cobre o cliente duas vezes.
+O objetivo é demonstrar soluções robustas para problemas comuns em sistemas distribuídos, priorizando escalabilidade, consistência de dados, segurança e resiliência.
 
-    Distributed Locking (Mutex Distribuído): Impedir que dois usuários comprem o mesmo assento de cinema simultaneamente.
+## Visão Geral do Projeto
 
-    Padrão Circuit Breaker: Evitar falhas em cascata quando um microserviço dependente cai.
+Ao contrário de provas de conceito simples, este projeto adota uma abordagem de engenharia rigorosa:
 
-    CQRS (Command Query Responsibility Segregation): Separar modelos de leitura e escrita para performance extrema.
+* **Linguagem & Runtime:** Python 3.11+ (Foco em Type Hinting e Modern Asyncio).
+* **Qualidade de Código:** Adesão estrita aos princípios SOLID, Clean Code e Design Patterns.
+* **Infraestrutura:** Containerização via Docker e orquestração de dependências (Redis, Postgres, RabbitMQ).
+* **Testabilidade:** Cobertura de testes unitários e de integração para fluxos críticos.
 
-    Processamento Assíncrono com Filas (Dead Letter Queues): Lidar com falhas de processamento em background e retentativas (Retry Pattern).
+## Roteiro de Implementação
 
-    Cache Aside & Cache Stampede Prevention: Estratégias avançadas de cache para evitar derrubar o banco de dados.
+Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cada módulo contém sua própria documentação técnica detalhada, diagramas de sequência e análise de complexidade (Big-O).
 
-    Soft Delete e Auditoria: Implementar exclusão lógica com histórico de alterações (Temporal Tables).
+| ID | Padrão / Desafio | Descrição do Problema & Solução | Status |
+|:--:|:---|:---|:--:|
+| 01 | **Distributed Rate Limiting** | Controle de tráfego distribuído (Sliding Window) utilizando Redis para prevenção de DDoS e abuso de recursos. | *Em Progresso* |
+| 02 | **Idempotency** | Implementação de chaves de idempotência para garantir que requisições de pagamento duplicadas não gerem cobrança dupla. | A Fazer |
+| 03 | **Distributed Locking** | Mutex distribuído para prevenir Race Conditions em acesso concorrente a recursos críticos (ex: reserva de assentos). | A Fazer |
+| 04 | **Circuit Breaker** | Proteção contra falhas em cascata e degradação graciosa quando serviços dependentes ficam indisponíveis. | A Fazer |
+| 05 | **CQRS** | Segregação de responsabilidade de Comando e Consulta para otimização de performance de leitura e escrita. | A Fazer |
+| 06 | **Async Processing & DLQ** | Processamento assíncrono robusto com estratégia de *Dead Letter Queues* para tratamento de falhas e *Retry Pattern*. | A Fazer |
+| 07 | **Cache Strategy** | Implementação de *Cache Aside* com proteção contra *Cache Stampede* (Thundering Herd Problem). | A Fazer |
+| 08 | **Soft Delete & Auditing** | Modelagem de exclusão lógica e tabelas temporais para manter histórico completo de alterações (Auditoria). | A Fazer |
+| 09 | **Database Sharding** | Simulação de roteamento de dados e particionamento horizontal baseado em Tenant ID. | A Fazer |
+| 10 | **Secure Webhooks** | Sistema de envio de notificações para terceiros com garantia de integridade via assinatura HMAC (SHA-256). | A Fazer |
+| 11 | **Saga Pattern** | Orquestração de transações distribuídas entre microserviços (Pedido -> Estoque -> Pagamento) com compensação de falhas. | A Fazer |
+| 12 | **Transactional Outbox** | Garantia de consistência eventual entre persistência em banco de dados e publicação de eventos (Kafka/RabbitMQ). | A Fazer |
+| 13 | **Feature Flags** | Sistema dinâmico para ativação/desativação de funcionalidades em tempo de execução sem necessidade de deploy (Decoupling Deploy from Release). | A Fazer |
+| 14 | **Full Text Search** | Implementação eficiente de indexação e busca textual em grandes volumes de dados (simulação de engine de busca). | A Fazer |
+| 15 | **Large File Streaming** | Upload e processamento de arquivos na ordem de Gigabytes utilizando *streams* para baixo consumo de memória (RAM). | A Fazer |
+| 16 | **Secrets Management** | Padrões para injeção segura de credenciais e segredos em tempo de execução, evitando dados sensíveis no código. | A Fazer |
+| 17 | **API Gateway (Aggregator)** | Padrão de Gateway para consolidação de chamadas a múltiplos microserviços em um único endpoint otimizado. | A Fazer |
+| 18 | **Deep Health Checks** | Monitoramento avançado verificando conectividade de dependências críticas (DB, Cache, Broker) e latência. | A Fazer |
+| 19 | **Multi-tenancy Isolation** | Arquitetura garantindo isolamento estrito de dados entre diferentes clientes (Tenants) em ambiente compartilhado. | A Fazer |
+| 20 | **Graceful Shutdown** | Gerenciamento de sinais do sistema (SIGTERM) para finalização segura de requisições em andamento antes do encerramento do processo. | A Fazer |
 
-    Sharding de Banco de Dados (Simulação): Roteamento de dados baseado em chaves (Tenant ID) para escalabilidade horizontal.
+## Como Executar
 
-    Webhooks com Assinatura HMAC: Sistema de envio de notificações seguro para terceiros.
+Instruções para levantar o ambiente de desenvolvimento e executar os testes de cada módulo.
 
-    Saga Pattern (Orquestração): Transação distribuída entre 3 serviços (ex: Pedido -> Estoque -> Pagamento).
+### Pré-requisitos
 
-    Outbox Pattern: Garantir consistência entre salvar no banco e publicar evento no Kafka/RabbitMQ.
+* Docker & Docker Compose
+* Python 3.11+
+* Make (Opcional)
 
-    Dynamic Feature Flags: Ativar/Desativar funcionalidades em tempo de execução sem deploy.
+### Instalação
 
-    Busca Textual (Full Text Search): Implementação eficiente de busca em milhões de registros (Elasticsearch ou Postgres TSVECTOR).
+```bash
+# Clonar o repositório
+git clone [https://github.com/GeovaneParedes/desafios_enterprise.git](https://github.com/GeovaneParedes/desafios_enterprise.git)
 
-    Validação de Arquivos Grandes (Streaming): Upload e processamento de arquivos de Gigabytes sem estourar a RAM.
-
-    Gerenciamento de Segredos (Vault): Injeção segura de credenciais em tempo de execução.
-
-    API Gateway (Aggregator Pattern): Um endpoint único que consolida dados de 4 serviços internos.
-
-    Health Checks Profundos: Monitoramento que verifica dependências (DB, Cache) e não apenas se a API responde 200.
-
-    Tenant Isolation (Multi-tenancy): Garantir que o Cliente A nunca veja dados do Cliente B na mesma tabela.
-
-    Graceful Shutdown: Garantir que o servidor termine as requisições em andamento antes de morrer (SIGTERM).
+# Instalar dependências
+pip install -r requirements.txt
