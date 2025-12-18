@@ -26,10 +26,11 @@ async def lifespan(app: FastAPI):
     redis_client.close()
 
 
-app = FastAPI(title="Enterprise Challenge #02 - Idempotency", lifespan=lifespan)
+app = FastAPI(title="Enterprise Challenge #02 - Idempotency",
+              lifespan=lifespan)
 
 # --- ADICIONA O MIDDLEWARE ---
-# Injetamos o Redis e o tempo de expiração
+# Estou injetando o Redis e o tempo de expiração
 app.add_middleware(IdempotencyMiddleware, redis_client=redis_client)
 
 
