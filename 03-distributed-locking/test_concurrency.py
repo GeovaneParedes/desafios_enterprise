@@ -1,8 +1,9 @@
 import concurrent.futures
+
 import requests
-import time
 
 URL = "http://localhost:8000/comprar"
+
 
 def tentar_comprar(user_id):
     try:
@@ -11,25 +12,28 @@ def tentar_comprar(user_id):
     except Exception as e:
         return 500, str(e)
 
+
 def run_stress_test():
     print("--- 🎫 INICIANDO TESTE DE CONCORRÊNCIA (BLACK FRIDAY) ---")
-    print("Objetivo: 20 usuários tentando comprar 1 único ingresso simultaneamente.\n")
+    print("Objetivo: 20 usuários tentando comprar 1 único ingresso"
+          " simultaneamente.\n")
 
     # Número de usuários simultâneos
     n_users = 20
-    
+
     sucessos = 0
     falhas = 0
     esgotados = 0
 
     # Dispara as requisições em paralelo (Threads)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=n_users) as executor:
+    with concurrent.futures.ThreadPoolExecutor(
+                                            max_workers=n_users) as executor:
         # Cria a lista de tarefas
         futures = [executor.submit(tentar_comprar, i) for i in range(n_users)]
-        
+
         for future in concurrent.futures.as_completed(futures):
             status, data = future.result()
-            
+
             if status == 200:
                 print(f"✅ SUCESSO: {data}")
                 sucessos += 1
@@ -52,6 +56,7 @@ def run_stress_test():
         print("\n💀 FALHA GRAVE: OVERBOOKING! Vendeu mais do que tinha.")
     else:
         print("\n❓ ESTRANHO: Ninguém comprou?")
+
 
 if __name__ == "__main__":
     run_stress_test()
