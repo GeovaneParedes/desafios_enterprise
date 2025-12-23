@@ -57,8 +57,10 @@ async def test_circuit_opens_after_failures():
     with pytest.raises(Exception):
         await cb.call(funcao_falha)
 
-    # 3. Terceira tentativa: Deve ser BLOQUEADA pelo Circuit Breaker (Fail Fast)
-    # Note que esperamos CircuitBreakerOpenException, não a Exception genérica da função
+    # 3. Terceira tentativa: Deve ser 
+    # BLOQUEADA pelo Circuit Breaker (Fail Fast)
+    # Note que esperamos CircuitBreakerOpenException,
+    # não a Exception genérica da função
     with pytest.raises(CircuitBreakerOpenException):
         await cb.call(funcao_falha)
 
