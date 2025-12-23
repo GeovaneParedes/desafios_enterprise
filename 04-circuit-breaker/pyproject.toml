@@ -1,0 +1,26 @@
+[tool.black]
+line-length = 80
+target-version = ['py310']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | env
+  | venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 80
+multi_line_output = 3
+# Regra para o isort ignorar a pasta env
+skip = ["env", ".venv", "venv", ".git", "__pycache__"]
