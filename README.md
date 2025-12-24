@@ -23,7 +23,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 02 | [**Idempotency Middleware**](./02-idempotency) | Garante que requisições de pagamento repetidas (devido a falhas de rede) não gerem cobrança dupla, usando Redis e Chaves de Idempotência. | ✅ Concluído |
 | 03 | [**Distributed Locking**](./03-distributed-locking) | Mutex distribuído para prevenir Race Conditions em acesso concorrente a recursos críticos (ex: reserva de assentos). | ✅ Concluído |
 | 04 | [**Circuit Breaker**](./04-circuit-breaker) | Proteção contra falhas em cascata e degradação graciosa quando serviços dependentes ficam indisponíveis. | ✅ Concluído |
-| 05 | **CQRS** | Segregação de responsabilidade de Comando e Consulta para otimização de performance de leitura e escrita. | A Fazer |
+| 05 | [**CQRS**](./05-cqrs) | Segregação de responsabilidade de Comando e Consulta para otimização de performance de leitura e escrita. | ✅ Concluído |
 | 06 | **Async Processing & DLQ** | Processamento assíncrono robusto com estratégia de *Dead Letter Queues* para tratamento de falhas e *Retry Pattern*. | A Fazer |
 | 07 | **Cache Strategy** | Implementação de *Cache Aside* com proteção contra *Cache Stampede* (Thundering Herd Problem). | A Fazer |
 | 08 | **Soft Delete & Auditing** | Modelagem de exclusão lógica e tabelas temporais para manter histórico completo de alterações (Auditoria). | A Fazer |
