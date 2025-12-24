@@ -1,0 +1,12 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+aio-pika>=9.4.0  # Cria Cliente RabbitMQ assíncrono moderno
+pydantic>=2.6.0
+python-dotenv>=1.0.0
+
+# Dev
+black>=24.0.0
+isort>=5.13.0
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+httpx>=0.27.0
