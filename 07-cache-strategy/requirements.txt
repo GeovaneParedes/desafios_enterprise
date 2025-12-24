@@ -1,0 +1,15 @@
+# Core Logic
+redis==5.2.1
+tenacity==9.0.0
+
+# Testing
+pytest==8.3.4
+pytest-cov==6.0.0
+fakeredis==2.26.1
+lupa==2.1
+# Dev Tools (Linters & Formatters)
+black==24.4.2
+isort==5.13.2
+flake8==7.1.0
+mypy==1.10.1
+types-redis==4.6.0.20240425  # Tipagem para o Redis (necessário para o mypy)
