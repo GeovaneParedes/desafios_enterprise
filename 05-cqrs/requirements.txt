@@ -1,0 +1,11 @@
+fastapi>=0.127.0
+uvicorn[standard]>=0.40.0
+redis>=7.1.0
+pydantic>=2.12.5
+# No momento não preciso de ORM pesado, vou usar SQL nativo para clareza
+# Dev
+black>=25.12.0
+isort>=7.0.0
+pytest>=9.0.2
+pytest-asyncio>=1.3.0
+httpx>=0.28.1
