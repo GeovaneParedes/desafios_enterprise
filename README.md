@@ -1,3 +1,4 @@
+
 # Enterprise Software Engineering Challenges
 
 Este repositório documenta a implementação de referência para 20 cenários complexos de engenharia de software focados em aplicações corporativas de alta escala. 
@@ -25,8 +26,8 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 04 | [**Circuit Breaker**](./04-circuit-breaker) | Proteção contra falhas em cascata e degradação graciosa quando serviços dependentes ficam indisponíveis. | ✅ Concluído |
 | 05 | [**CQRS**](./05-cqrs) | Segregação de responsabilidade de Comando e Consulta para otimização de performance de leitura e escrita. | ✅ Concluído |
 | 06 | [**Async Processing & DLQ**](./06-dlq) | Processamento assíncrono robusto com estratégia de *Dead Letter Queues* para tratamento de falhas e *Retry Pattern*. | ✅ Concluído |
-| 07 | **Cache Strategy** | Implementação de *Cache Aside* com proteção contra *Cache Stampede* (Thundering Herd Problem). | A Fazer |
-| 08 | **Soft Delete & Auditing** | Modelagem de exclusão lógica e tabelas temporais para manter histórico completo de alterações (Auditoria). | A Fazer |
+| 07 | [**Cache Strategy**](./07-cache-strategy) | Implementação de *Cache Aside* com proteção contra *Cache Stampede* (Thundering Herd Problem) via Mutex. | ✅ Concluído |
+| 08 | [**Soft Delete & Auditing**](./08-soft-delete-auditing) | Implementação de exclusão lógica com *Global Query Filters* e auditoria automática de alterações (CDC) via Event Listeners. | ✅ Concluído |
 | 09 | **Database Sharding** | Simulação de roteamento de dados e particionamento horizontal baseado em Tenant ID. | A Fazer |
 | 10 | **Secure Webhooks** | Sistema de envio de notificações para terceiros com garantia de integridade via assinatura HMAC (SHA-256). | A Fazer |
 | 11 | **Saga Pattern** | Orquestração de transações distribuídas entre microserviços (Pedido -> Estoque -> Pagamento) com compensação de falhas. | A Fazer |
@@ -39,22 +40,3 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 18 | **Deep Health Checks** | Monitoramento avançado verificando conectividade de dependências críticas (DB, Cache, Broker) e latência. | A Fazer |
 | 19 | **Multi-tenancy Isolation** | Arquitetura garantindo isolamento estrito de dados entre diferentes clientes (Tenants) em ambiente compartilhado. | A Fazer |
 | 20 | **Graceful Shutdown** | Gerenciamento de sinais do sistema (SIGTERM) para finalização segura de requisições em andamento antes do encerramento do processo. | A Fazer |
-
-## Como Executar
-
-Instruções para levantar o ambiente de desenvolvimento e executar os testes de cada módulo.
-
-### Pré-requisitos
-
-* Docker & Docker Compose
-* Python 3.11+
-* Make (Opcional)
-
-### Instalação
-
-```bash
-# Clonar o repositório
-git clone [https://github.com/GeovaneParedes/desafios_enterprise.git](https://github.com/GeovaneParedes/desafios_enterprise.git)
-
-# Instalar dependências
-pip install -r requirements.txt

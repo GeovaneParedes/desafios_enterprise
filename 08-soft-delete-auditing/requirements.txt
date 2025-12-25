@@ -1,0 +1,14 @@
+# Database
+sqlalchemy==2.0.29
+psycopg2-binary==2.9.9
+
+# Testing
+pytest==8.1.1
+testcontainers==3.7.1  # Para subir um Postgres real durante os testes 
+                       # (Nível Enterprise!)
+
+# Tools
+black==24.3.0
+isort==5.13.2
+flake8==7.0.0
+mypy==1.9.0
