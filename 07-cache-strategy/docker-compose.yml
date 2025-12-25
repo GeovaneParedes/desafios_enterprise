@@ -1,12 +1,38 @@
-version: '3.8'
 
 services:
+  # O Banco de Cache Principal
   redis:
     image: redis:7.2-alpine
+    container_name: enterprise_redis
     ports:
       - "6379:6379"
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis_data:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 3s
       retries: 5
+    networks:
+      - enterprise_net
+
+  # Interface Visual para Debug (A melhoria que faltava!)
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: enterprise_redis_gui
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - enterprise_net
+
+volumes:
+  redis_data:
+
+networks:
+  enterprise_net:
+    driver: bridge
