@@ -28,7 +28,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 06 | [**Async Processing & DLQ**](./06-dlq) | Processamento assíncrono robusto com estratégia de *Dead Letter Queues* para tratamento de falhas e *Retry Pattern*. | ✅ Concluído |
 | 07 | [**Cache Strategy**](./07-cache-strategy) | Implementação de *Cache Aside* com proteção contra *Cache Stampede* (Thundering Herd Problem) via Mutex. | ✅ Concluído |
 | 08 | [**Soft Delete & Auditing**](./08-soft-delete-auditing) | Implementação de exclusão lógica com *Global Query Filters* e auditoria automática de alterações (CDC) via Event Listeners. | ✅ Concluído |
-| 09 | **Database Sharding** | Simulação de roteamento de dados e particionamento horizontal baseado em Tenant ID. | A Fazer |
+| 09 | [**Database Sharding**](./09-database-sharding) | Simulação de roteamento de dados e particionamento horizontal (Application-Level) baseado em Tenant ID. | ✅ Concluído |
 | 10 | **Secure Webhooks** | Sistema de envio de notificações para terceiros com garantia de integridade via assinatura HMAC (SHA-256). | A Fazer |
 | 11 | **Saga Pattern** | Orquestração de transações distribuídas entre microserviços (Pedido -> Estoque -> Pagamento) com compensação de falhas. | A Fazer |
 | 12 | **Transactional Outbox** | Garantia de consistência eventual entre persistência em banco de dados e publicação de eventos (Kafka/RabbitMQ). | A Fazer |

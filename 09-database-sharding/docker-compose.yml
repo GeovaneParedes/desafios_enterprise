@@ -1,0 +1,41 @@
+
+services:
+  # --- Shard 01 (Porta 5433) ---
+  shard_01:
+    image: postgres:15-alpine
+    container_name: db_shard_01
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_db_shard_1
+    ports:
+      - "5433:5432"
+    volumes:
+      - shard_01_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d app_db_shard_1"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # --- Shard 02 (Porta 5434) ---
+  shard_02:
+    image: postgres:15-alpine
+    container_name: db_shard_02
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: app_db_shard_2
+    ports:
+      - "5434:5432"
+    volumes:
+      - shard_02_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d app_db_shard_2"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  shard_01_data:
+  shard_02_data:
