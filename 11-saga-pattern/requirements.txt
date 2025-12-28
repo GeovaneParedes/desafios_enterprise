@@ -1,0 +1,5 @@
+pytest==8.1.1
+loguru==0.7.2  # Para logs estruturados e bonitos
+attrs==23.2.0  # Para classes de dados robustas
+black==25.12.0  # Para formatação de código consistente
+isort==5.12.0  # Para organização automática de imports
