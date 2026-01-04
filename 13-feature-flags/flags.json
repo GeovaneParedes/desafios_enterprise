@@ -1,0 +1,21 @@
+{
+    "new_checkout_flow": {
+        "enabled": true,
+        "strategy": "percentage",
+        "parameters": {
+            "percentage": 20
+        }
+    },
+    "dark_mode_beta": {
+        "enabled": true,
+        "strategy": "user_list",
+        "parameters": {
+            "users": ["user_123", "admin_01"]
+        }
+    },
+    "maintenance_banner": {
+        "enabled": false,
+        "strategy": "boolean",
+        "parameters": {}
+    }
+}

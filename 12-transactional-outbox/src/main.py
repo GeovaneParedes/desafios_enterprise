@@ -9,6 +9,7 @@ engine = create_engine("sqlite:///:memory:")
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 
+
 def run_simulation():
     session = Session()
     service = OrderService(session)
@@ -17,13 +18,15 @@ def run_simulation():
 
     print("--- 🛒 Passo 1: Cliente Cria Pedido (Transação DB) ---")
     order_id = service.create_order("iPhone 15", 9999)
-    print(f"✅ Pedido {order_id} salvo no DB. Evento salvo na Outbox (mas não publicado ainda).")
+    print(f"✅ Pedido {order_id} salvo no DB. Evento salvo na Outbox"
+          f"(mas não publicado ainda).")
 
     print("\n--- 🕵️ Passo 2: Verificando o DB antes do Relay ---")
     # Aqui o evento deve existir com processed=False
     from src.models import OutboxEvent
     from sqlalchemy import select
-    event = session.scalar(select(OutboxEvent).where(OutboxEvent.aggregate_id == order_id))
+    event = session.scalar(
+        select(OutboxEvent).where(OutboxEvent.aggregate_id == order_id))
     print(f"📋 Estado do Outbox: ID={event.id}, Processed={event.processed}")
 
     print("\n--- ⚙️ Passo 3: Executando o Outbox Relay (Worker) ---")
@@ -31,7 +34,9 @@ def run_simulation():
 
     print("\n--- 🕵️ Passo 4: Verificando o DB pós Relay ---")
     session.refresh(event)
-    print(f"📋 Estado do Outbox: ID={event.id}, Processed={event.processed}, At={event.processed_at}")
+    print(f"📋 Estado do Outbox: ID={event.id},"
+          f" Processed={event.processed}, At={event.processed_at}")
+
 
 if __name__ == "__main__":
     run_simulation()
