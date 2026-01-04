@@ -33,7 +33,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 11 | [**Saga Pattern**](./11-saga-pattern) | Orquestração de transações distribuídas entre microserviços (Pedido -> Estoque -> Pagamento) com compensação de falhas. | ✅ Concluído |
 | 12 | [**Transactional Outbox**](./12-transactional-outbox) | Garantia de consistência eventual entre persistência em banco de dados e publicação de eventos (Kafka/RabbitMQ). | ✅ Concluído |
 | 13 | [**Feature Flags**](./13-feature-flags) | Sistema de toggles para ativação gradual de recursos (Canary Release) e testes A/B baseados em usuários. | ✅ Concluído |
-| 14 | **Full Text Search** | Implementação eficiente de indexação e busca textual em grandes volumes de dados (simulação de engine de busca). | A Fazer |
+| 14 | [**API Rate Limiting**](./14-api-rate-limiting) | Controle de tráfego distribuído utilizando Redis (Fixed Window Algorithm) para prevenir abuso de API. | ✅ Concluído |
 | 15 | **Large File Streaming** | Upload e processamento de arquivos na ordem de Gigabytes utilizando *streams* para baixo consumo de memória (RAM). | A Fazer |
 | 16 | **Secrets Management** | Padrões para injeção segura de credenciais e segredos em tempo de execução, evitando dados sensíveis no código. | A Fazer |
 | 17 | **API Gateway (Aggregator)** | Padrão de Gateway para consolidação de chamadas a múltiplos microserviços em um único endpoint otimizado. | A Fazer |
