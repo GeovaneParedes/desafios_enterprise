@@ -31,7 +31,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 09 | [**Database Sharding**](./09-database-sharding) | Simulação de roteamento de dados e particionamento horizontal (Application-Level) baseado em Tenant ID. | ✅ Concluído |
 | 10 | [**Secure Webhooks**](./10-secure-webhooks) | Sistema de envio de notificações para terceiros com garantia de integridade via assinatura HMAC (SHA-256). | ✅ Concluído |
 | 11 | [**Saga Pattern**](./11-saga-pattern) | Orquestração de transações distribuídas entre microserviços (Pedido -> Estoque -> Pagamento) com compensação de falhas. | ✅ Concluído |
-| 12 | **Transactional Outbox** | Garantia de consistência eventual entre persistência em banco de dados e publicação de eventos (Kafka/RabbitMQ). | A Fazer |
+| 12 | [**Transactional Outbox**](./12-transactional-outbox) | Garantia de consistência eventual entre persistência em banco de dados e publicação de eventos (Kafka/RabbitMQ). | ✅ Concluído |
 | 13 | **Feature Flags** | Sistema dinâmico para ativação/desativação de funcionalidades em tempo de execução sem necessidade de deploy (Decoupling Deploy from Release). | A Fazer |
 | 14 | **Full Text Search** | Implementação eficiente de indexação e busca textual em grandes volumes de dados (simulação de engine de busca). | A Fazer |
 | 15 | **Large File Streaming** | Upload e processamento de arquivos na ordem de Gigabytes utilizando *streams* para baixo consumo de memória (RAM). | A Fazer |
