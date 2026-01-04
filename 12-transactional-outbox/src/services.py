@@ -2,6 +2,7 @@ import json
 from sqlalchemy.orm import Session
 from src.models import Order, OutboxEvent
 
+
 class OrderService:
     def __init__(self, session: Session):
         self.session = session
@@ -13,8 +14,9 @@ class OrderService:
         # 1. Operação de Negócio
         new_order = Order(product=product, amount=amount)
         self.session.add(new_order)
-        
-        # O flush gera o ID do pedido antes do commit final, mas ainda na transação
+
+        # O flush gera o ID do pedido antes do commit final,
+        # mas ainda na transação
         self.session.flush()
 
         # 2. Criação do Evento (Outbox Pattern)
@@ -35,5 +37,5 @@ class OrderService:
         # 3. Commit Único (Atomicidade)
         # Se falhar aqui, nem o pedido nem o evento são salvos.
         self.session.commit()
-        
+
         return new_order.id

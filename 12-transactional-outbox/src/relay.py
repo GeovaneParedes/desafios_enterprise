@@ -4,13 +4,15 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 from src.models import OutboxEvent
 
+
 class FakeMessageBroker:
     """Simula um Kafka/RabbitMQ que pode falhar aleatoriamente."""
-    
+
     def publish(self, topic: str, message: str):
         # Simulando latência de rede
         print(f"📡 [Broker] Publicando no tópico '{topic}': {message}")
         return True
+
 
 class OutboxRelay:
     def __init__(self, session: Session, broker: FakeMessageBroker):
@@ -44,11 +46,13 @@ class OutboxRelay:
                     # (At-Least-Once Delivery)
                     event.processed = True
                     event.processed_at = datetime.datetime.utcnow()
-                    print(f"✅ [Relay] Evento {event.id} processado com sucesso.")
-            
+                    print(
+                       f"✅ [Relay] Evento {event.id} processado com sucesso.")
+
             except Exception as e:
                 print(f"❌ [Relay] Falha ao publicar evento {event.id}: {e}")
-                # Em um sistema real, implementaríamos Retry Backoff aqui ou DLQ
+                # Em um sistema real, implementaríamos Retry Backoff
+                # aqui ou DLQ
 
         # 4. Salva o estado atualizado dos eventos
         self.session.commit()
