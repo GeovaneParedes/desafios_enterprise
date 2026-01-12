@@ -35,7 +35,7 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 13 | [**Feature Flags**](./13-feature-flags) | Sistema de toggles para ativação gradual de recursos (Canary Release) e testes A/B baseados em usuários. | ✅ Concluído |
 | 14 | [**API Rate Limiting**](./14-api-rate-limiting) | Controle de tráfego distribuído utilizando Redis (Fixed Window Algorithm) para prevenir abuso de API. | ✅ Concluído |
 | 15 | [**Circuit Breaker**](./15-circuit-breaker) | Padrão de resiliência (State Machine) para prevenir falhas em cascata e permitir auto-recuperação (Self-Healing). | ✅ Concluído |
-| 16 | **Secrets Management** | Padrões para injeção segura de credenciais e segredos em tempo de execução, evitando dados sensíveis no código. | A Fazer |
+| 16 | [**CQRS**](./16-cqrs) | Segregação de responsabilidades entre Comandos (Escrita/Regras) e Consultas (Leitura/Performance). | ✅ Concluído |
 | 17 | **API Gateway (Aggregator)** | Padrão de Gateway para consolidação de chamadas a múltiplos microserviços em um único endpoint otimizado. | A Fazer |
 | 18 | **Deep Health Checks** | Monitoramento avançado verificando conectividade de dependências críticas (DB, Cache, Broker) e latência. | A Fazer |
 | 19 | **Multi-tenancy Isolation** | Arquitetura garantindo isolamento estrito de dados entre diferentes clientes (Tenants) em ambiente compartilhado. | A Fazer |

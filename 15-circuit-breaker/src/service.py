@@ -1,6 +1,7 @@
 import random
 import time
 
+
 class UnstableService:
     def __init__(self):
         self.should_fail = False
