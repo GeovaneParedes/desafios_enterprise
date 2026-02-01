@@ -1,0 +1,7 @@
+
+services:
+  redis_hardcore:
+    image: redis:7-alpine
+    container_name: redis_hardcore
+    ports:
+      - "6381:6379"

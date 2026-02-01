@@ -37,6 +37,6 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 15 | [**Circuit Breaker**](./15-circuit-breaker) | Padrão de resiliência (State Machine) para prevenir falhas em cascata e permitir auto-recuperação (Self-Healing). | ✅ Concluído |
 | 16 | [**CQRS**](./16-cqrs) | Segregação de responsabilidades entre Comandos (Escrita/Regras) e Consultas (Leitura/Performance). | ✅ Concluído |
 | 17 | [**Domain Events**](./17-domain-events) | Desacoplamento de serviços utilizando Event Bus e Observer Pattern (Core Logic vs Side Effects). | ✅ Concluído |
-| 18 | **Deep Health Checks** | Monitoramento avançado verificando conectividade de dependências críticas (DB, Cache, Broker) e latência. | A Fazer |
+| 18 | [**Idempotency API**](./18-idempotency-hardcore) | Garantia de execução única em transações financeiras utilizando Distributed Locking (Redis SETNX) para evitar Race Conditions. | ✅ Concluído |
 | 19 | **Multi-tenancy Isolation** | Arquitetura garantindo isolamento estrito de dados entre diferentes clientes (Tenants) em ambiente compartilhado. | A Fazer |
 | 20 | **Graceful Shutdown** | Gerenciamento de sinais do sistema (SIGTERM) para finalização segura de requisições em andamento antes do encerramento do processo. | A Fazer |
