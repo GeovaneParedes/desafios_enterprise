@@ -40,4 +40,4 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 18 | [**Idempotency API**](./18-idempotency-hardcore) | Garantia de execução única em transações financeiras utilizando Distributed Locking (Redis SETNX) para evitar Race Conditions. | ✅ Concluído |
 | 19 | [**Distributed Tracing**](./19-distributed-tracing) | Observabilidade e monitoramento de performance (APM) utilizando OpenTelemetry e Jaeger para identificar gargalos. | ✅ Concluído |
 | 20 | [**Graceful Shutdown**](./20-graceful-shutdown) | Gerenciamento de sinais do sistema (SIGTERM) para finalização segura de requisições em andamento antes do encerramento do processo. | ✅ Concluído |
-
+| 21 | [**Health Checks**](./21-health-checks) | Implementação de Liveness e Readiness Probes para orquestração resiliente (Zero Downtime e Self-Healing). | ✅ Concluído |
