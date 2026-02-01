@@ -1,7 +1,7 @@
 
 # Enterprise Software Engineering Challenges
 
-Este repositório documenta a implementação de referência para 20 cenários complexos de engenharia de software focados em aplicações corporativas de alta escala. 
+Este repositório documenta a implementação de referência para 21 cenários complexos de engenharia de software focados em aplicações corporativas de alta escala. 
 
 O objetivo é demonstrar soluções robustas para problemas comuns em sistemas distribuídos, priorizando escalabilidade, consistência de dados, segurança e resiliência.
 
@@ -16,7 +16,7 @@ Ao contrário de provas de conceito simples, este projeto adota uma abordagem de
 
 ## Roteiro de Implementação
 
-Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cada módulo contém sua própria documentação técnica detalhada, diagramas de sequência e análise de complexidade (Big-O).
+Abaixo estão listados os 21 desafios arquiteturais abordados neste projeto. Cada módulo contém sua própria documentação técnica detalhada, diagramas de sequência e análise de complexidade (Big-O).
 
 | ID | Padrão / Desafio | Descrição do Problema & Solução | Status |
 |:--:|:---|:---|:--:|
