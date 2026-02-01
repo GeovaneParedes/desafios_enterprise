@@ -1,0 +1,16 @@
+
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.53
+    container_name: jaeger_tracing
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    ports:
+      - "16686:16686" # UI do Jaeger (Acesse aqui!)
+      - "4317:4317"   # Porta OTLP gRPC (Onde o Python manda os dados)
+      - "4318:4318"   # Porta OTLP HTTP
+  
+  redis_tracing:
+    image: redis:7-alpine
+    ports:
+      - "6382:6379"

@@ -38,5 +38,5 @@ Abaixo estão listados os 20 desafios arquiteturais abordados neste projeto. Cad
 | 16 | [**CQRS**](./16-cqrs) | Segregação de responsabilidades entre Comandos (Escrita/Regras) e Consultas (Leitura/Performance). | ✅ Concluído |
 | 17 | [**Domain Events**](./17-domain-events) | Desacoplamento de serviços utilizando Event Bus e Observer Pattern (Core Logic vs Side Effects). | ✅ Concluído |
 | 18 | [**Idempotency API**](./18-idempotency-hardcore) | Garantia de execução única em transações financeiras utilizando Distributed Locking (Redis SETNX) para evitar Race Conditions. | ✅ Concluído |
-| 19 | **Multi-tenancy Isolation** | Arquitetura garantindo isolamento estrito de dados entre diferentes clientes (Tenants) em ambiente compartilhado. | A Fazer |
+| 19 | [**Distributed Tracing**](./19-distributed-tracing) | Observabilidade e monitoramento de performance (APM) utilizando OpenTelemetry e Jaeger para identificar gargalos. | ✅ Concluído |
 | 20 | **Graceful Shutdown** | Gerenciamento de sinais do sistema (SIGTERM) para finalização segura de requisições em andamento antes do encerramento do processo. | A Fazer |
